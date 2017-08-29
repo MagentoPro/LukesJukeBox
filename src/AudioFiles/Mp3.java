@@ -55,9 +55,10 @@ public class Mp3 extends AudioFile
     public void pause()
     {
         try{
-            mediaPlayer.wait();
+            mediaPlayer.pause();
         }
        catch(Exception ex){
+           int test = 123;
            //TODO... throw new custom fileLoad exception
        }
     }

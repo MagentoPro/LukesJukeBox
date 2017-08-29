@@ -88,9 +88,13 @@ public class JukeBox
                 currentAudio = playlist.get(songIndex);
                 currentAudio.play();
 
-                while(currentAudio.state == AudioFile.PLAYERSTATE.PLAY) {
+                while(currentAudio.state == AudioFile.PLAYERSTATE.PLAY || currentAudio.state == AudioFile.PLAYERSTATE.PAUSE) {
                     try {
-                        double songTimer = currentAudio.getTimer();
+                        //double songTimer = currentAudio.getTimer();
+                        if(currentAudio.state == AudioFile.PLAYERSTATE.PAUSE)
+                            currentAudio.pause();
+                        else
+                            currentAudio.play();
                         Thread.sleep(1000);
                     }
                     catch(Exception ex) {}
@@ -109,6 +113,7 @@ public class JukeBox
     {
         //try {
             currentAudio.state = AudioFile.PLAYERSTATE.PAUSE;
+            currentAudio.pause();
         //}
         //catch(Exception ex) {}
     }
