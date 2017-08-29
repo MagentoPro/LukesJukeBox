@@ -1,7 +1,7 @@
 # LukesJukeBox
 Simple JukeBox functionality
 
-To run this project just execte the "LukeJukeBox.jar" file in the project root.
+To run this project just execute the "LukeJukeBox.jar" file in the project root.
 
 There is lots of functionality still needed to be completed for this Jukebox application but I ran out of time. Right now only mp3 files have been tested. The applicaiton is split into two packages plus the directory to store the audio files. To add new songs, place audio files in the "src\JukeBox\songs" folder and they will be picked up automatically and added to the library. 
 
