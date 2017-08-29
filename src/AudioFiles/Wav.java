@@ -4,24 +4,24 @@
  * and open the template in the editor.
  */
 package AudioFiles;
-import javax.sound.sampled.AudioInputStream;
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.Clip;
+import java.io.File;
 
 /**
  *
  * @author Luke
  */
-public class Wav
+public class Wav extends AudioFile
 {
     
-    public Wav(String filePath)
+    public Wav(File file)
     {
         //this.filePath = filePath;
     }
     
-    public void play()
-    {
-        
-    }
+    public void play() {}
+    public void stop() {}
+    public void pause() {}
+    public double getTimer() { return (double)123; }
+    public String getName() { return "name"; }
+    public double getMaxPlayTime() { return (double)123; }
 }

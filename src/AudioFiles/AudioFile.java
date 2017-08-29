@@ -27,10 +27,22 @@ public abstract class AudioFile
     
     public static AudioFile load(File file)
     {
+        AudioFile song = null;
+        String fileType = getFileType(file.getName());
         //use a switch statment to check file type and load mps or wave
-        AudioFile mp3 = new Mp3(file);
-        //mp3.setName(file.getName());
-        return mp3;
+        switch(fileType) {
+            case "mp3":
+                song = new Mp3(file);
+                break;
+            case "wav":
+                song = new Wav(file);
+                break;
+            default :
+                song = new Mp3(file);
+                break;
+        }
+        
+        return song;
     }
     
     public File getFile()
@@ -38,6 +50,17 @@ public abstract class AudioFile
         return this.file;
     }
     
+    private static String getFileType(String fileName)
+    {
+        String extension = "";
+
+        int i = fileName.lastIndexOf('.');
+        if (i > 0) {
+            extension = fileName.substring(i+1);
+        }
+        
+        return extension;
+    }
 //    public void setName(String name)
 //    {
 //        this.name = name;
