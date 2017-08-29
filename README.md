@@ -1,2 +1,0 @@
-# LukesJukeBox
-Simple JukeBox functionality
